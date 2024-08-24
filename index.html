@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parental Control Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Parental Control Dashboard</h1>
+
+        <section id="auth">
+            <h2>Register</h2>
+            <form id="registerForm">
+                <input type="email" id="registerEmail" placeholder="Email" required>
+                <input type="password" id="registerPassword" placeholder="Password" required>
+                <select id="registerRole">
+                    <option value="parent">Parent</option>
+                    <option value="child">Child</option>
+                </select>
+                <button type="submit">Register</button>
+            </form>
+
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+
+        <section id="control" style="display: none;">
+            <h2>Pair Device</h2>
+            <form id="pairForm">
+                <input type="email" id="pairEmail" placeholder="Child's Email" required>
+                <input type="text" id="parentToken" placeholder="Parent's JWT" required>
+                <button type="submit">Pair</button>
+            </form>
+
+            <h2>Update Settings</h2>
+            <form id="updateSettingsForm">
+                <input type="text" id="updateToken" placeholder="Parent's JWT" required>
+                <input type="number" id="screenTime" placeholder="Screen Time (minutes)" required>
+                <input type="text" id="appLimits" placeholder="App Limits (comma-separated)" required>
+                <button type="submit">Update Settings</button>
+            </form>
+
+            <h2>Fetch Device Data</h2>
+            <button id="fetchData">Fetch Data</button>
+            <pre id="deviceData"></pre>
+        </section>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+
